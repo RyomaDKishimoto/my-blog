@@ -89,7 +89,6 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
             {!isHome && <SiteNavLogo />}
             <SiteNavContent css={[this.state.showTitle ? HideNav : '']}>
               <ul css={NavStyles} role="menu">
-                {/* TODO: mark current nav item - add class nav-current */}
                 <li role="menuitem">
                   <Link to="/">Home</Link>
                 </li>
@@ -188,6 +187,7 @@ const SiteNavLeft = styled.div`
   @media (max-width: 700px) {
     margin-right: 0;
     padding-left: 5vw;
+    visibility:hidden
   }
 `;
 
@@ -250,10 +250,6 @@ const SiteNavRight = styled.div`
   justify-content: flex-end;
   padding: 10px 0;
   height: 64px;
-
-  @media (max-width: 700px) {
-    display: none;
-  }
 `;
 
 const SocialLinks = styled.div`
@@ -313,5 +309,24 @@ const HideNav = css`
     transform: translateY(0);
   }
 `;
+
+/* 検証用 Styling */
+// const navParants = css`
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+// `;
+
+// const siteMastRight = css`
+//   display: flex;
+//   align-items: center;
+// `;
+
+// const siteNavItem = css`
+//   display: inline-block;
+//   padding: 5px 10px;
+//   color: #fff;
+//   opacity: 0.7;
+// `;
 
 export default SiteNav;

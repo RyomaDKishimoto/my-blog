@@ -103,7 +103,8 @@ const ReadNextAside = styled.aside`
     .post-card {
       flex: 1 1 auto;
       margin: 25px;
-      padding: 25px 0 0;
+      // padding: 25px 0 0;
+      padding: 25px 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
   }

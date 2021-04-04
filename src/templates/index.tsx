@@ -119,7 +119,6 @@ const IndexPage: React.FC<IndexProps> = props => {
           <div css={[inner, Posts]}>
             <div css={[PostFeed]}>
               {props.data.allMarkdownRemark.edges.map((post, index) => {
-                // filter out drafts in production
                 return (
                   (post.node.frontmatter.draft !== true ||
                     process.env.NODE_ENV !== 'production') && (

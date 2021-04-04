@@ -83,15 +83,28 @@ export const PostCard: React.FC<PostCardProps> = ({ post, large = false }) => {
 };
 
 const PostCardStyles = css`
-  position: relative;
-  flex: 1 1 301px;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+  /* 横スクロール用 */
+  flex: 0 0 auto;
+  width: 80%;
+
+  /* 見た目調整 */
+  margin-right: 10px;
   margin: 0 0 40px;
   padding: 0 20px 40px;
   min-height: 220px;
   background-size: cover;
+
+  @media screen and (min-width: 480px) {
+    position: relative;
+    flex: 1 1 301px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 0 0 40px;
+    padding: 0 20px 40px;
+    min-height: 220px;
+    background-size: cover;
+  }
 `;
 
 const PostCardLarge = css`
