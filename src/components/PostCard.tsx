@@ -11,6 +11,7 @@ import styled from '@emotion/styled';
 import { colors } from '../styles/colors';
 import { PageContext } from '../templates/post';
 import { AuthorList } from './AuthorList';
+import '@fontsource/sawarabi-mincho'; // Defaults to weight 400 with all styles included.
 
 export interface PostCardProps {
   post: PageContext;
@@ -85,14 +86,19 @@ export const PostCard: React.FC<PostCardProps> = ({ post, large = false }) => {
 const PostCardStyles = css`
   /* 横スクロール用 */
   flex: 0 0 auto;
-  width: 80%;
+  width: 75%;
 
   /* 見た目調整 */
-  margin-right: 10px;
-  margin: 0 0 40px;
-  padding: 0 20px 40px;
+  border-color: ${colors.darkmode};
+  border-style: solid;
+  border-width: 0.1em;
+
+  margin: 0 0 22px 22px;
   min-height: 220px;
   background-size: cover;
+
+  border-radius: 9px;
+  background: #10072b;
 
   @media screen and (min-width: 480px) {
     position: relative;
@@ -100,10 +106,11 @@ const PostCardStyles = css`
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    margin: 0 0 40px;
-    padding: 0 20px 40px;
+    margin-right: 20px
     min-height: 220px;
     background-size: cover;
+    background: #181326;
+
   }
 `;
 
@@ -135,6 +142,7 @@ const PostCardLarge = css`
     .post-card-content {
       flex: 0 1 361px;
       justify-content: center;
+      font-family: 'Sawarabi Gothic', sans-serif;
     }
 
     .post-card-title {
@@ -180,6 +188,7 @@ const PostCardContent = styled.div`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  padding: 24px 24px;
 `;
 
 const PostCardContentLink = css`

@@ -29,7 +29,8 @@ const PageTemplate = css`
   @media (prefers-color-scheme: dark) {
     .site-main {
       /* background: var(--darkmode); */
-      background: ${colors.darkmode};
+      // background: ${colors.darkmode};
+      background: #0A041A;
     }
   }
 `;

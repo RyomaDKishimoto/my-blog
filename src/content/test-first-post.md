@@ -2,7 +2,7 @@
 layout: post
 title: first post
 image: img/testimg-cover.jpg
-author: [Ghost]
+author: [Ryoma]
 date: 2018-09-30T07:03:47.149Z
 tags:
   - Yeah

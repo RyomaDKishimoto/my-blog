@@ -4,8 +4,6 @@ import React from 'react';
 
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-
-import { colors } from '../../styles/colors';
 import { SocialLink, SocialLinkFb } from '../../styles/shared';
 import config from '../../website-config';
 import { Facebook } from '../icons/facebook';
@@ -13,6 +11,7 @@ import { Twitter } from '../icons/twitter';
 import { Instagram } from '../icons/instagram';
 import { SubscribeModal } from '../subscribe/SubscribeModal';
 import { SiteNavLogo } from './SiteNavLogo';
+import '@fontsource/sawarabi-mincho';
 
 interface SiteNavProps {
   isHome?: boolean;
@@ -69,7 +68,6 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
 
     const trigger = this.titleRef.current.getBoundingClientRect().top;
     const triggerOffset = this.titleRef.current.offsetHeight + 35;
-
     // show/hide post title
     if (this.lastScrollY >= trigger + triggerOffset) {
       this.setState({ showTitle: true });
@@ -86,18 +84,15 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
       <>
         {config.showSubscribe && <SubscribeModal ref={this.subscribe} />}
         <nav css={SiteNavStyles}>
+          {!isHome && <SiteNavLogo />}
           <SiteNavLeft className="site-nav-left">
-            {!isHome && <SiteNavLogo />}
             <SiteNavContent css={[this.state.showTitle ? HideNav : '']}>
               <ul css={NavStyles} role="menu">
                 <li role="menuitem">
-                  <Link to="/">Home</Link>
+                  <Link to="/">ホーム</Link>
                 </li>
                 <li role="menuitem">
-                  <Link to="/about">About</Link>
-                </li>
-                <li role="menuitem">
-                  <Link to="/tags/getting-started/">Getting Started Hoge</Link>
+                  <Link to="/about">オキママとは</Link>
                 </li>
               </ul>
               {isPost && (
@@ -141,6 +136,7 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
               >
                 <Instagram />
               </a>
+              {/* <ThemeToggler /> */}
             </SocialLinks>
           </SiteNavRight>
         </nav>
@@ -156,8 +152,7 @@ export const SiteNavMain = css`
   left: 0;
   z-index: 1000;
   /* background: color(var(--darkgrey) l(-5%)) */
-  background: ${darken('0.05', colors.darkgrey)};
-
+  background: #0A041A;
   @media (max-width: 700px) {
     padding-right: 0;
     padding-left: 0;
@@ -255,7 +250,7 @@ const SiteNavRight = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 10px 0;
+  padding: 10px 10px;
   height: 64px;
 `;
 
@@ -299,24 +294,5 @@ const HideNav = css`
     transform: translateY(0);
   }
 `;
-
-/* 検証用 Styling */
-// const navParants = css`
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-// `;
-
-// const siteMastRight = css`
-//   display: flex;
-//   align-items: center;
-// `;
-
-// const siteNavItem = css`
-//   display: inline-block;
-//   padding: 5px 10px;
-//   color: #fff;
-//   opacity: 0.7;
-// `;
 
 export default SiteNav;

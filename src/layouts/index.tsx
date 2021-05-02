@@ -5,8 +5,9 @@ import { lighten } from 'polished';
 
 // eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error
 // @ts-ignore
-import favicon from '../../src/favicon.ico';
+import favicon from '../../src/favicon_.ico';
 import { colors } from '../styles/colors';
+import '@fontsource/sawarabi-mincho'; // Defaults to weight 400 with all styles included.
 
 interface IndexProps {
   className?: string;
@@ -143,6 +144,7 @@ const IndexLayout: React.FC<IndexProps> = props => {
           }
           a {
             background-color: transparent;
+            font-family: 'Sawarabi Gothic', sans-serif;
           }
           a:active,
           a:hover {
@@ -277,19 +279,64 @@ const IndexLayout: React.FC<IndexProps> = props => {
           body {
             overflow-x: hidden;
             color: ${lighten('-0.3', colors.midgrey)};
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
-              Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-family: 'Sawarabi Gothic', sans-serif;
+            /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+            */   Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             font-size: 1.6rem;
             line-height: 1.6em;
+            letter-spacing: 0.05em;
             font-weight: 400;
             font-style: normal;
-            letter-spacing: 0;
             text-rendering: optimizeLegibility;
             background: #fff;
+            font-feature-settings: "palt" 1；
 
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             -moz-font-feature-settings: 'liga' on;
+          }
+
+          body.light {
+            h1 {
+              color: #191b1f;
+            }
+            #site-main {
+              background: #fff;
+              #site-center {
+                background: #fff;
+                h2 {
+                  color: ${colors.darkmode};
+                }
+              }
+
+              .css-1vpg9ru-PostFullByline .post-full-byline-meta h4, a {
+                color: ${colors.darkmode}; // author style
+              }
+            }
+
+            .css-1k2nboe-ReadNextAside-outer {
+              background: #fff;
+              .post-card-title {
+                color: ${colors.darkmode};
+              }
+              .post-card-primary-tag {
+                color: #26a6ed;
+              }
+              span, a {
+                color: ${colors.darkmode};
+              }
+            }
+
+            // card detail page
+            .post-full-content {
+              background: #fff;
+              strong, h3 {
+                color: #191b1f;
+              }
+              div {
+                color: #191b1f;
+              }
+            }
           }
 
           ::selection {
@@ -333,6 +380,8 @@ const IndexLayout: React.FC<IndexProps> = props => {
           dl,
           blockquote {
             margin: 0 0 1.5em 0;
+            line-height: 1.7em;
+            font-family: 'Sawarabi Gothic', sans-serif;
           }
 
           ol,

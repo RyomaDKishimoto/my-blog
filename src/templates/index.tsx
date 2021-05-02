@@ -23,6 +23,7 @@ import {
 } from '../styles/shared';
 import config from '../website-config';
 import { PageContext } from './post';
+import { colors } from '../styles/colors';
 
 export interface IndexProps {
   pageContext: {
@@ -47,6 +48,7 @@ export interface IndexProps {
     };
   };
 }
+export const UserCount = React.createContext(true);
 
 const IndexPage: React.FC<IndexProps> = props => {
   const { width, height } = props.data.header.childImageSharp.fixed;
@@ -101,7 +103,7 @@ const IndexPage: React.FC<IndexProps> = props => {
               <SiteTitle className="site-title">
                 {props.data.logo ? (
                   <img
-                    style={{ maxHeight: '55px' }}
+                    style={{ maxHeight: '200px' }}
                     src={props.data.logo.childImageSharp.fixed.src}
                     alt={config.title}
                   />
@@ -109,13 +111,13 @@ const IndexPage: React.FC<IndexProps> = props => {
                   config.title
                 )}
               </SiteTitle>
-              <SiteDescription>{config.description}</SiteDescription>
+              {/* <SiteDescription>{config.description}</SiteDescription> */}
             </SiteHeaderContent>
           </div>
         </div>
         <main id="site-main" css={[SiteMain, outer]}>
           <div css={[inner, Posts]}>
-            <div css={[PostFeed]}>
+            <div id="site-center" css={[PostFeed]}>
               {props.data.allMarkdownRemark.edges.map((post, index) => {
                 return (
                   (post.node.frontmatter.draft !== true ||
@@ -142,7 +144,7 @@ const IndexPage: React.FC<IndexProps> = props => {
 
 export const pageQuery = graphql`
   query blogPageQuery($skip: Int!, $limit: Int!) {
-    logo: file(relativePath: { eq: "img/ghost-logo.png" }) {
+    logo: file(relativePath: { eq: "img/top-image.png" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
@@ -210,11 +212,17 @@ export const pageQuery = graphql`
 const HomePosts = css`
   @media (min-width: 795px) {
     .post-card-large {
+      border-color: ${colors.darkmode};
+      border-style: solid;
+      border-width: 0.1em;
+
       flex: 1 1 100%;
       flex-direction: row;
-      padding-bottom: 40px;
+      padding-bottom: 0px;
       min-height: 280px;
       border-top: 0;
+      margin-right: 20px;
+      margin-bottom: 40px
     }
 
     .post-card-large .post-card-title {

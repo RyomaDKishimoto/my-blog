@@ -5,39 +5,58 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
 import { colors } from '../styles/colors';
-import { outer, inner } from '../styles/shared';
+import { outer, inner, SocialLink, SocialLinkFb } from '../styles/shared';
 import config from '../website-config';
+import { Facebook } from './icons/facebook';
+import { Twitter } from './icons/twitter';
+import { Instagram } from './icons/instagram';
 
 export const Footer: React.FC = () => {
   return (
     <footer css={[outer, SiteFooter]}>
       <div css={[inner, SiteFooterContent]}>
         <section className="copyright">
-          <Link to="/">{config.title}</Link> &copy; {new Date().getFullYear()}{' '}
+          <Link to="/">Copyright</Link> &copy; {2021}{' '}
           {config.footer && (
             <Link to="/">
-              | {config.title} {config.footer}
+              | {config.title} All Rights Reserved.
             </Link>
           )}
         </section>
         <SiteFooterNav>
-          <Link to="/">Latest Posts</Link>
           {config.facebook && (
-            <a href={config.facebook} target="_blank" rel="noopener noreferrer">
-              Facebook
+            <a
+              className="social-link-fb"
+              css={[SocialLink, SocialLinkFb]}
+              href={config.facebook}
+              target="_blank"
+              title="Facebook"
+              rel="noopener noreferrer"
+            >
+              <Facebook />
             </a>
           )}
           {config.twitter && (
-            <a href={config.twitter} target="_blank" rel="noopener noreferrer">
-              Twitter
+            <a
+              css={SocialLink}
+              href={config.twitter}
+              title="Twitter"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Twitter />
             </a>
           )}
-
-          <a href="https://github.com/scttcper/gatsby-casper" target="_blank" rel="noopener noreferrer">
-            Casper
+          <a
+            css={SocialLink}
+            href={config.twitter}
+            title="Instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Instagram />
           </a>
-
-          <a href="/rss.xml">RSS</a>
+          {/* <a href="/rss.xml">RSS</a> */}
         </SiteFooterNav>
       </div>
     </footer>
@@ -47,9 +66,10 @@ export const Footer: React.FC = () => {
 const SiteFooter = css`
   position: relative;
   padding-top: 20px;
-  padding-bottom: 60px;
+  padding-bottom: 40px;
   color: #fff;
-  background: ${setLightness('0.0015', colors.darkgrey)};
+  background: #0a0b0c;
+  // background: ${setLightness('0.0015', colors.darkgrey)};
 `;
 
 const SiteFooterContent = css`
@@ -89,11 +109,9 @@ const SiteFooterNav = styled.nav`
     height: 2px;
     background: #fff;
     border-radius: 100%;
-  }
-
-  a:first-of-type:before {
     display: none;
   }
+
   @media (max-width: 650px) {
     a:first-of-type {
       margin-left: 0;

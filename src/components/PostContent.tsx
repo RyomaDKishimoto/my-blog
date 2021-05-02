@@ -439,7 +439,8 @@ export const PostFullContent = styled.section`
 
   @media (prefers-color-scheme: dark) {
     /* background: var(--darkmode); */
-    background: ${colors.darkmode};
+    // background: ${colors.darkmode};
+    background: #0A041A;
 
     h1,
     h2,
@@ -449,9 +450,9 @@ export const PostFullContent = styled.section`
       color: rgba(255, 255, 255, 0.9);
     }
 
-    a {
+    a, p {
       color: #fff;
-      box-shadow: inset 0 -1px 0 #fff;
+      // box-shadow: inset 0 -1px 0 #fff;
     }
 
     strong {

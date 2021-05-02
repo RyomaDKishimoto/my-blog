@@ -10,6 +10,8 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "removeComments": false,
-    "preserveConstEnums": true
+    "preserveConstEnums": true,
+    //暗黙的にanyになる値をエラーにする機能をoff。
+    "noImplicitAny": false
   }
 }

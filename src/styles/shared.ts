@@ -8,6 +8,10 @@ import { colors } from './colors';
 export const outer = css`
   position: relative;
   padding: 0 5vw;
+
+  @media screen and (min-width: 480px) {
+    padding: 0 1.5vw;
+  }
 `;
 
 // Centered content container blocks
@@ -31,7 +35,8 @@ export const SiteMain = css`
   flex-grow: 1;
 
   @media (prefers-color-scheme: dark) {
-    background: ${colors.darkmode};
+    // background: ${colors.darkmode};
+    background: #0A041A;
   }
 `;
 
@@ -93,7 +98,8 @@ export const PostFeed = css`
     }
 
   @media (prefers-color-scheme: dark) {
-    background: ${colors.darkmode};
+    // background: ${colors.darkmode};
+    background: #0A041A;
   }
 `;
 
@@ -127,14 +133,13 @@ export const SiteHeaderContent = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 6vw 3vw;
+  padding: 3vw 3vw;
   min-height: 200px;
   max-height: 340px;
 `;
 
 export const SiteHeaderStyles = css`
   position: relative;
-  /* margin-top: 64px; */
   padding-bottom: 12px;
   color: #fff;
   /* background: color(var(--darkgrey) l(-5%)) no-repeat center center; */
@@ -167,7 +172,8 @@ export const SiteHeaderStyles = css`
 
   @media (prefers-color-scheme: dark) {
     :before {
-      background: rgba(0, 0, 0, 0.6);
+      // background: rgba(0, 0, 0, 0.6);
+      background: #0A041A;;
     }
   }
 `;
@@ -240,7 +246,8 @@ export const ResponsiveHeaderBackground = styled.div<{ backgroundImage?: string 
 
     @media (prefers-color-scheme: dark) {
       &:before {
-        background: rgba(0, 0, 0, 0.6);
+        background: #10072b;
+        // background: rgba(0, 0, 0, 0.6);
       }
     }
   `}

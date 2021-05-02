@@ -118,7 +118,8 @@ const SubscribeFormButton = styled.button`
     ${saturate('-0.1', lighten('-0.07', colors.blue))} 90%,
     ${saturate('-0.1', lighten('-0.04', colors.blue))}
   ); */
-  background: linear-gradient(#4fb7f0, #29a0e0 60%, #29a0e0 90%, #36a6e2);
+  background: #9984d5;
+  // background: linear-gradient(#4fb7f0, #29a0e0 60%, #29a0e0 90%, #36a6e2);
   border-radius: 5px;
 
   -webkit-font-smoothing: subpixel-antialiased;
