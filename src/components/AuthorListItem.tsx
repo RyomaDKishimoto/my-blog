@@ -25,7 +25,7 @@ export const AuthorListItem: React.FC<AuthorListItemProps> = props => {
     }
 
     clearTimeout(timeout);
-    setHover(true);
+    // setHover(true);
   }
 
   function handleMouseLeave() {

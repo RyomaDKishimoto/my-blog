@@ -1,11 +1,11 @@
 ---
 layout: post
-title: first post
+title: '保育料給付'
 image: img/testimg-cover.jpg
 author: [Ryoma]
 date: 2018-09-30T07:03:47.149Z
-tags:
-  - Yeah
+tags: ['Speeches', 'test']
+excerpt: Where to find this project on オキママ.
 ---
 
 ここがカードの説明書きになるでー

@@ -1,11 +1,11 @@
 ---
 layout: post
-title: A Full and Comprehensive Style Test
+title: 'こども医療助成'
 image: img/testimg-cover.jpg
-author: [Ghost]
+author: [Ryoma]
 date: 2018-09-30T07:03:47.149Z
-tags:
-  - Tests
+tags: ['Speeches', 'test']
+excerpt: Where to find this project on オキママ.
 ---
 
 Below is just about everything you’ll need to style in the theme. Check the source code to see the many embedded elements within paragraphs.

@@ -7,7 +7,7 @@ import { colors } from './colors';
 
 export const outer = css`
   position: relative;
-  padding: 0 5vw;
+  // padding: 0 5vw;
 
   @media screen and (min-width: 480px) {
     padding: 0 1.5vw;
@@ -33,7 +33,7 @@ export const SiteNavMain = css`
 
 export const SiteMain = css`
   flex-grow: 1;
-
+  padding: 0 4vw;
   @media (prefers-color-scheme: dark) {
     // background: ${colors.darkmode};
     background: #0A041A;
@@ -117,11 +117,63 @@ export const SocialLink = css`
     height: 1.8rem;
     fill: #fff;
   }
+
+  svg.twitter-link {
+    fill: #1DA1F2;
+  }
+
+  svg.facebook-link {
+    fill: #3b5998;
+    background: #fff;
+    border-radius: 50px;
+  }
+
+  svg.instagram-link {
+    background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+    border-radius: 10px;
+  }
+
+  svg.youtube-link {
+    border-radius: 10px;
+    fill: #bb0000;
+    background: #fff;
+  }
 `;
 
-export const SocialLinkFb = css`
+export const SocialLinkForAboutPage = css`
+  display: inline-block;
+  margin: 0;
+  padding: 10px;
+  opacity: 0.8;
+
+  :hover {
+    opacity: 1;
+  }
+
   svg {
-    height: 1.6rem;
+    height: 3.8rem;
+    fill: #fff;
+  }
+
+  svg.twitter-link {
+    fill: #1DA1F2;
+  }
+
+  svg.instagram-link {
+    background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+    border-radius: 10px;
+  }
+
+  svg.facebook-link {
+    fill: #3b5998;
+    background: #fff;
+    border-radius: 50px;
+  }
+
+  svg.youtube-link {
+    border-radius: 10px;
+    fill: #bb0000;
+    background: #fff;
   }
 `;
 

@@ -102,9 +102,9 @@ const ReadNextAside = styled.aside`
   @media (max-width: 650px) {
     .post-card {
       flex: 1 1 auto;
-      margin: 25px;
+      margin: 25px 0;
       // padding: 25px 0 0;
-      padding: 25px 0;
+      // padding: 25px 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
   }
@@ -114,5 +114,5 @@ const ReadNextFeed = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin: 0 -25px;
-  padding: 60px 0 0 0;
+  padding: 60px 45px 45px ;
 `;

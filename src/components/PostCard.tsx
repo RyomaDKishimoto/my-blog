@@ -110,7 +110,6 @@ const PostCardStyles = css`
     min-height: 220px;
     background-size: cover;
     background: #181326;
-
   }
 `;
 

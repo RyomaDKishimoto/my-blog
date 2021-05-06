@@ -1,10 +1,11 @@
 ---
-title: 'Gettysburg Address'
+title: '児童扶養手当'
 author: [Ryoma]
-tags: []
+tags: ['Speeches', 'test']
 image: img/demo1.jpg
 date: '1863-11-19T10:00:00.000Z'
 draft: false
+excerpt: Where to find this project on オキママ.
 ---
 
 Fourscore and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.

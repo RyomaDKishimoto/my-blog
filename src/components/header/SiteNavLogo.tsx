@@ -43,7 +43,7 @@ const SiteNavLogoStyles = css`
   z-index: 100;
   flex-shrink: 0;
   display: inline-block;
-  margin-right: 32px;
+  margin-right: 20px;
   margin-left: 20px;
   padding: 12px 0;
   color: #fff;
@@ -63,5 +63,10 @@ const SiteNavLogoStyles = css`
     height: 21px;
     margin: 10px;
   }
+
+  // @media screen and (min-width: 480px) {
+  //   margin-right: 20px;
+  //   margin-left: 20px;
+  // }
 `;
 

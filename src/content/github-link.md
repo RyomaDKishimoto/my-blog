@@ -1,12 +1,11 @@
 ---
 layout: post
-title: Github Source
+title: 生活保護
 image: img/callum-shaw-555357-unsplash.jpg
 author: [Ryoma]
 date: 2019-03-10T10:00:00.000Z
-tags:
-  - Source
-excerpt: Where to find this project on GitHub.
+tags: ['Speeches', 'test']
+excerpt: Where to find this project on オキママ.
 ---
 
 ## __A few things you should know__

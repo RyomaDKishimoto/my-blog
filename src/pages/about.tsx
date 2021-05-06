@@ -1,8 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
-
 import { css } from '@emotion/react';
-
 import { Footer } from '../components/Footer';
 import SiteNav from '../components/header/SiteNav';
 import { PostFullContent } from '../components/PostContent';
@@ -18,6 +16,15 @@ import {
 } from '../styles/shared';
 import { NoImage, PostFull, PostFullHeader, PostFullTitle } from '../templates/post';
 import { colors } from '../styles/colors';
+import SubscribeImage from '../components/subscribe/SubscribeImage';
+import { SocialLink, SocialLinkForAboutPage } from '../../src/styles/shared';
+import config from '../website-config';
+import { Facebook } from '../components/icons/facebook';
+import { Twitter } from '../components/icons/twitter';
+import { Instagram } from '../components/icons/instagram';
+import { Youtube } from '../components/icons/youtube';
+
+import styled from '@emotion/styled';
 
 const PageTemplate = css`
   .site-main {
@@ -35,74 +42,118 @@ const PageTemplate = css`
   }
 `;
 
-const About: React.FC = () => (
-  <IndexLayout>
-    <Helmet>
-      <title>About</title>
-    </Helmet>
-    <Wrapper css={PageTemplate}>
-      <header className="site-archive-header no-image" css={[SiteHeader, SiteArchiveHeader]}>
-        <div css={[outer, SiteNavMain]}>
-          <div css={inner}>
-            <SiteNav isHome={false} />
-          </div>
-        </div>
-      </header>
-      <main id="site-main" className="site-main" css={[SiteMain, outer]}>
-        <div css={inner}>
-          <article className="post page" css={[PostFull, NoImage]}>
-            <PostFullHeader className="post-full-header">
-              <PostFullTitle className="post-full-title">About</PostFullTitle>
-            </PostFullHeader>
+const SocialLinks = styled.div`
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+`;
 
-            <PostFullContent className="post-full-content">
-              <div className="post-content">
-                <h5>
-                  A starter template for Gatsby <br /> GitHub: <a href="https://github.com/scttcper/gatsby-casper">scttcper/gatsby-casper</a>
-                </h5>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc commodo finibus leo,
-                  non tempus magna vehicula ac. Maecenas mollis ante finibus pharetra imperdiet.
-                  Maecenas in aliquam purus. Nam et massa a nulla fermentum dapibus sit amet in
-                  neque. Ut ipsum ipsum, rhoncus a sodales pellentesque, interdum a elit. Nullam
-                  aliquam tellus nibh, eget laoreet dui aliquet non. Vestibulum malesuada ante at
-                  diam tempus, ac interdum risus scelerisque. Sed ipsum neque, vulputate porta diam
-                  eget, consequat blandit nulla. Integer volutpat velit vitae purus lacinia aliquam.
-                  Integer bibendum ipsum vitae magna pulvinar, nec vehicula dolor vulputate. Nulla
-                  eu massa id orci placerat finibus vel sit amet eros. Vestibulum quis consequat
-                  massa. Sed sagittis sollicitudin massa at commodo. Praesent diam nisi, imperdiet
-                  posuere eleifend nec, blandit ac massa.
-                </p>
-                <p>
-                  Vestibulum semper pretium ipsum nec congue. Ut ac eros nisi. Donec leo sem,
-                  aliquam mollis sapien ultrices, dapibus congue diam. Proin viverra dapibus
-                  blandit. Ut mauris tellus, tristique id felis vel, venenatis vestibulum nunc. Nam
-                  molestie pulvinar nibh, eget egestas augue. Maecenas tellus arcu, mattis ut ipsum
-                  non, sollicitudin convallis nunc. Donec nec neque tristique, aliquet lacus id,
-                  laoreet nunc. Cras dapibus nisi nulla, ullamcorper faucibus neque suscipit ac.
-                  Donec eget orci venenatis justo lobortis volutpat. Proin vel placerat nisl.
-                  Integer arcu nunc, sodales eu fringilla non, aliquam non diam. Cras placerat,
-                  massa et faucibus pretium, ante elit tincidunt tellus, tristique ultricies velit
-                  quam et massa.
-                </p>
-                <p>
-                  In nunc lacus, dapibus vitae lacus sit amet, efficitur iaculis neque. Suspendisse
-                  ut tellus quis leo vestibulum tincidunt. Aenean nec enim ac dolor lacinia semper.
-                  Ut sed laoreet libero. Nunc elementum sollicitudin accumsan. Nunc eu augue neque.
-                  Proin a tortor nibh. Cras eu nisl ornare sapien feugiat pellentesque. Mauris
-                  dignissim vel quam eu pellentesque. Integer sit amet posuere quam, eu ullamcorper
-                  odio. Nullam a lacus tempus sapien dignissim ullamcorper. In hac habitasse platea
-                  dictumst. Proin quis massa aliquam, feugiat tortor sit amet, tincidunt urna. Donec
-                  posuere pulvinar lectus, ac semper ipsum vulputate quis.
-                </p>
-              </div>
-            </PostFullContent>
-          </article>
-        </div>
-      </main>
-      <Footer />
-    </Wrapper>
-  </IndexLayout>
-);
+const About: React.FC = () => {
+  const [pageOnLoad, setPageOnLoad] = useState(false);
+  useEffect(() => {
+    setPageOnLoad(!pageOnLoad);
+  }, []);
+
+  return (
+    <IndexLayout>
+      <Helmet>
+        <title>About</title>
+      </Helmet>
+      <Wrapper css={PageTemplate}>
+        <header className="site-archive-header no-image" css={[SiteHeader, SiteArchiveHeader]}>
+          <div css={[outer, SiteNavMain]}>
+            <div css={inner}>
+              <SiteNav isHome={false} />
+            </div>
+          </div>
+        </header>
+        <main id="site-main" className="site-main" css={[SiteMain, outer]}>
+          <div css={inner}>
+            <article className="post page" css={[PostFull, NoImage]}>
+              <PostFullHeader className="post-full-header">
+                <PostFullTitle className="post-full-title">沖縄県シングルマザーが受給できる情報まとめサイト</PostFullTitle>
+              </PostFullHeader>
+              <SubscribeImage />
+              <PostFullContent className="post-full-content">
+                <div className="post-content">
+                  <p>
+                    市町村が発信している情報は読みにくいし、分かりづらくないですか？
+                  </p>
+                  <p>
+                    日々仕事と育児に忙しいお母さんにとって、そんな情報を全て読む時間もなければ、結局役所に足を運ぶのもめんどくさいのが本音だと思います。
+                  </p>
+                  <p>
+                    そんな複雑の内容を、動画やシンプルにまとめた文章で日々忙しいお母さんへ届けるのがオキママです。
+                  </p>
+                  <p>
+                    「宜野湾市の母子家庭の情報が欲しい！」「糸満の児童扶養手当の情報が欲しい！」といった要望があれば、すぐに希望の記事を投稿していきます。
+                  </p>
+                  <p>
+                    欲しい記事の要望はYouTubeの動画コメント欄やSNSから連絡してくれればOKです。
+                  </p>
+                  <SocialLinks>
+                    {config.facebook && (
+                      <a
+                        css={[SocialLinkForAboutPage]}
+                        href={config.facebook}
+                        target="_blank"
+                        title="Facebook"
+                        rel="noopener noreferrer"
+                      >
+                        <Facebook />
+                      </a>
+                    )}
+                    {config.twitter && (
+                      <a
+                        css={SocialLinkForAboutPage}
+                        href={config.twitter}
+                        title="Twitter"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Twitter />
+                      </a>
+                    )}
+                    {config.instagram && (
+                      <a
+                        css={SocialLinkForAboutPage}
+                        href={config.instagram}
+                        title="Instagram"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Instagram />
+                      </a>
+                    )}
+                    {config.youtube && (
+                      <a
+                        css={SocialLinkForAboutPage}
+                        href={config.youtube}
+                        title="YouTube"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Youtube />
+                      </a>
+                    )}
+                  </SocialLinks>
+                  <p>
+                    こちらの動画は僕がオキママを作るキッカケについて話している動画になります。
+                  </p>
+                  {pageOnLoad ? (
+                    <div>
+                      <iframe allowFullScreen width="100%" height="315" src="https://www.youtube.com/embed/QuJGkwYw8K0" frameBorder="0" allow="autoplay; encrypted-media"/>
+                    </div>
+                  ) : null}
+                </div>
+              </PostFullContent>
+            </article>
+          </div>
+        </main>
+        <Footer />
+      </Wrapper>
+    </IndexLayout>
+  );
+};
 
 export default About;

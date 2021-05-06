@@ -20,6 +20,9 @@ export interface WebsiteConfig {
    * full url, no username
    */
   twitter?: string;
+  youtube?: string;
+
+  instagram?: string;
   /**
    * hide or show all email subscribe boxes
    */
@@ -50,13 +53,15 @@ export interface WebsiteConfig {
 
 const config: WebsiteConfig = {
   title: 'オキママ',
-  description: 'The professional publishing platform',
+  description: '沖縄県の母子家庭支援情報ブログ',
   coverImage: 'img/blog-cover.png',
   logo: 'img/ghost-logo.png',
-  lang: 'en',
-  siteUrl: 'https://gatsby-casper.netlify.com',
-  facebook: 'https://www.facebook.com/ghost',
-  twitter: 'https://twitter.com/tryghost',
+  lang: 'ja',
+  siteUrl: 'https://single-mothers-okinawa.netlify.app/',
+  facebook: 'https://www.facebook.com/ryoma.okinawa',
+  twitter: 'https://twitter.com/@HlCyXREkX4ge9zq',
+  instagram: 'https://www.instagram.com/ryoma_okinawa',
+  youtube: 'https://www.youtube.com/channel/UCiJTqx_gotsQ5uh9DYVy4Sg',
   showSubscribe: true,
   mailchimpAction: 'https://twitter.us19.list-manage.com/subscribe/post?u=a89b6987ac248c81b0b7f3a0f&amp;id=7d777b7d75',
   mailchimpName: 'b_a89b6987ac248c81b0b7f3a0f_7d777b7d75',

@@ -84,17 +84,18 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
       <>
         {config.showSubscribe && <SubscribeModal ref={this.subscribe} />}
         <nav css={SiteNavStyles}>
-          {!isHome && <SiteNavLogo />}
+          {/* {!isHome && <SiteNavLogo />} */}
+          <SiteNavLogo />
           <SiteNavLeft className="site-nav-left">
             <SiteNavContent css={[this.state.showTitle ? HideNav : '']}>
-              <ul css={NavStyles} role="menu">
+              {/* <ul css={NavStyles} role="menu">
                 <li role="menuitem">
                   <Link to="/">ホーム</Link>
                 </li>
                 <li role="menuitem">
                   <Link to="/about">オキママとは</Link>
                 </li>
-              </ul>
+              </ul> */}
               {isPost && (
                 <NavPostTitle ref={this.titleRef} className="nav-post-title">
                   {post.title}
@@ -103,7 +104,15 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
             </SiteNavContent>
           </SiteNavLeft>
           <SiteNavRight>
-            <SocialLinks>
+            <ul css={NavStyles} role="menu">
+              <li role="menuitem">
+                <Link to="/">ホーム</Link>
+              </li>
+              <li role="menuitem">
+                <Link to="/about">オキママとは</Link>
+              </li>
+            </ul>
+            {/* <SocialLinks>
               {config.facebook && (
                 <a
                   className="social-link-fb"
@@ -136,8 +145,7 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
               >
                 <Instagram />
               </a>
-              {/* <ThemeToggler /> */}
-            </SocialLinks>
+            </SocialLinks> */}
           </SiteNavRight>
         </nav>
       </>
@@ -186,11 +194,11 @@ const SiteNavLeft = styled.div`
 
   -ms-overflow-scrolling: touch;
 
-  @media (max-width: 700px) {
-    margin-right: 0;
-    padding-left: 5vw;
-    visibility:hidden
-  }
+  // @media (max-width: 700px) {
+  //   margin-right: 0;
+  //   padding-left: 5vw;
+  //   visibility:hidden
+  // }
 `;
 
 const SiteNavContent = styled.div`

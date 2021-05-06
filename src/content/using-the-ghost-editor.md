@@ -1,11 +1,12 @@
 ---
 layout: post
-title: 'Using The Ghost Editor'
+title: '特別生活給付金'
 author: [Ryoma]
-tags: ['Getting Started']
+tags: ['Speeches', 'test']
 image: img/writing.jpg
 date: '2015-02-02T23:46:37.121Z'
 draft: false
+excerpt: Where to find this project on オキママ.
 ---
 
 Ghost uses a language called **Markdown** to format text.
