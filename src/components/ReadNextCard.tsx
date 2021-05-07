@@ -35,8 +35,8 @@ export const ReadNextCard: React.FC<ReadNextProps> = props => {
     <ReadNextCardArticle className="read-next-card">
       <header className="read-next-card-header">
         <ReadNextCardHeaderTitle>
-          <span>More in</span>{' '}
           <Link to={`/tags/${_.kebabCase(props.tags[0])}/`}>{props.tags[0]}</Link>
+          {' '}<span>に関する別の記事</span>
         </ReadNextCardHeaderTitle>
       </header>
       <ReadNextCardContent className="read-next-card-content">
@@ -54,8 +54,7 @@ export const ReadNextCard: React.FC<ReadNextProps> = props => {
                 </h4>
                 <ReadNextCardMeta className="read-next-card-meta">
                   <p>
-                    <time dateTime={datetime}>{displayDatetime}</time> - {n.node.timeToRead} min
-                    read
+                    <time dateTime={datetime}>{displayDatetime}</time> - 読むのにかかる時間 {n.node.timeToRead} 分
                   </p>
                 </ReadNextCardMeta>
               </li>
@@ -65,7 +64,7 @@ export const ReadNextCard: React.FC<ReadNextProps> = props => {
       </ReadNextCardContent>
       <ReadNextCardFooter className="read-next-card-footer">
         <Link to={`/tags/${_.kebabCase(props.tags[0])}/`}>
-          {props.relatedPosts.totalCount > 1 && `See all ${props.relatedPosts.totalCount} posts`}
+          {props.relatedPosts.totalCount > 1 && `${props.tags[0]}${' '}に関する${props.relatedPosts.totalCount}つの記事を全て読む`}
           {props.relatedPosts.totalCount === 1 && '1 post'}
           {props.relatedPosts.totalCount === 0 && 'No posts'} →
         </Link>
