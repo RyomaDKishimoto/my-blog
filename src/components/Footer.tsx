@@ -5,7 +5,7 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
 import { colors } from '../styles/colors';
-import { outer, inner, SocialLink, SocialLinkFb } from '../styles/shared';
+import { outer, inner, SocialLink } from '../styles/shared';
 import config from '../website-config';
 import { Facebook } from './icons/facebook';
 import { Twitter } from './icons/twitter';
@@ -27,7 +27,7 @@ export const Footer: React.FC = () => {
           {config.facebook && (
             <a
               className="social-link-fb"
-              css={[SocialLink, SocialLinkFb]}
+              css={[SocialLink]}
               href={config.facebook}
               target="_blank"
               title="Facebook"

@@ -1,10 +1,9 @@
 import { Link } from 'gatsby';
 import { darken } from 'polished';
 import React from 'react';
-
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { SocialLink, SocialLinkFb } from '../../styles/shared';
+import { SocialLink } from '../../styles/shared';
 import config from '../../website-config';
 import { Facebook } from '../icons/facebook';
 import { Twitter } from '../icons/twitter';

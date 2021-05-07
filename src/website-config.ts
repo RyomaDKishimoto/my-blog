@@ -54,7 +54,7 @@ export interface WebsiteConfig {
 const config: WebsiteConfig = {
   title: 'オキママ',
   description: '沖縄県の母子家庭支援情報ブログ',
-  coverImage: 'img/blog-cover.png',
+  coverImage: 'img/top-image.png',
   logo: 'img/ghost-logo.png',
   lang: 'ja',
   siteUrl: 'https://single-mothers-okinawa.netlify.app/',

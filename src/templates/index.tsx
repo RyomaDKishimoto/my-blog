@@ -52,7 +52,7 @@ export const UserCount = React.createContext(true);
 
 const IndexPage: React.FC<IndexProps> = props => {
   const { width, height } = props.data.header.childImageSharp.fixed;
-
+  console.log(`${config.siteUrl}${props.data.header.childImageSharp.fixed.src}`);
   return (
     <IndexLayout css={HomePosts}>
       <Helmet>
