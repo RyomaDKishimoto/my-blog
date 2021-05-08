@@ -87,14 +87,6 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
           <SiteNavLogo />
           <SiteNavLeft className="site-nav-left">
             <SiteNavContent css={[this.state.showTitle ? HideNav : '']}>
-              {/* <ul css={NavStyles} role="menu">
-                <li role="menuitem">
-                  <Link to="/">ホーム</Link>
-                </li>
-                <li role="menuitem">
-                  <Link to="/about">オキママとは</Link>
-                </li>
-              </ul> */}
               {isPost && (
                 <NavPostTitle ref={this.titleRef} className="nav-post-title">
                   {post.title}
