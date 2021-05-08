@@ -221,6 +221,7 @@ const NavStyles = css`
   }
 
   li a {
+    white-space: nowrap;
     position: relative;
     display: block;
     padding: 12px 12px;
