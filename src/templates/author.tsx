@@ -350,8 +350,8 @@ const AuthHeaderContent = styled.div`
   justify-content: center;
   margin: 5px 0 0 30px;
   @media (max-width: 500px) {
-    align-items: center;
-    margin: 16px 0 0 0;
+    align-items: left;
+    margin: 16px 0 0 16px;
   }
 `;
 

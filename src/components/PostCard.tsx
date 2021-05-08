@@ -89,16 +89,19 @@ const PostCardStyles = css`
   width: 75%;
 
   /* 見た目調整 */
-  border-color: ${colors.darkmode};
-  border-style: solid;
-  border-width: 0.1em;
+  @media (prefers-color-scheme: dark) {
+    border-color: ${colors.darkmode};
+    border-style: solid;
+    border-width: 0.1em;
+    background: #10072b;
+  }
+
 
   margin: 0 0 22px 22px;
   min-height: 220px;
   background-size: cover;
 
   border-radius: 9px;
-  background: #10072b;
 
   @media screen and (min-width: 480px) {
     position: relative;

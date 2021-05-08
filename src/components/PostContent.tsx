@@ -102,7 +102,6 @@ export const PostFullContent = styled.section`
     color: ${colors.darkgrey};
     word-break: break-word;
     /* box-shadow: var(--darkgrey) 0 -1px 0 inset; */
-    box-shadow: ${colors.darkgrey} 0 -1px 0 inset;
     transition: all 0.2s ease-in-out;
   }
 
