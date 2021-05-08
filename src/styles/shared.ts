@@ -248,7 +248,8 @@ export const SiteArchiveHeader = css`
   .site-header-content {
     position: relative;
     align-items: stretch;
-    padding: 12vw 0 20px;
+    // padding: 12vw 0 20px;
+    padding: 12vw 4vw 20px;
     min-height: 200px;
     max-height: 600px;
   }
